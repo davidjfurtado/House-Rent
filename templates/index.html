@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html>
+    <body>
 	<style>
 		body
 		{
-			background-image:url('pexels-sebastian-sørensen-731082.jpg');
-			background-cover:cover;
-			background-color:red;
+			background-image:url('image.jpg');
+			
+			margin:10%;
 		  height: 500px; /* You must set a specified height */
 		  background-position: center; /* Center the image */
 		  background-repeat: no-repeat; /* Do not repeat the image */
 		  background-size: cover; /* Resize the background image to cover the entire container */
-		filter:brightness(50%);
+          
 		}
+        .input input{
+            margin-left:40%;
+            border-radius: 5px;
+            height: 30px;
+            width: 300px;
+            border: none;
+
+        }
+        .input button
+        {
+            padding:10px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: orange;
+            border:none;
+            color:white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left:40%;
+        }
+        .input button:hover
+        {
+            padding:10px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: white;
+            border:none;
+            color:black;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition:0.6s;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left:40%;
+        }
+        label{
+            color:white;
+            margin-left:45%;
+        }
 	</style>
-<body>
+
 	
  <div class="login">
-	<h1>Prediction of House Rent</h1>
+	<h1 style="color:white; margin-left:40%;">Prediction of House Rent</h1>
+    <div class="input">
     <form action="{{ url_for('predict')}}"method="post">
     	<input type="text" name="city" placeholder="Name of the City" required="required" /><br><br>
         <input type="text" name="type" placeholder="Type of house" required="required" /><br><br>
@@ -24,10 +67,10 @@
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><br>
     </form>
-
+</div>
    <br>
    <br>
-   {{ prediction_text }}
+   <label>{{ prediction_text }}</label>
 
  </div>
 
