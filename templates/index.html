@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
+	<style>
+		body
+		{
+			background-image:url('pexels-sebastian-sørensen-731082.jpg');
+			background-cover:cover;
+			
+		  height: 500px; /* You must set a specified height */
+		  background-position: center; /* Center the image */
+		  background-repeat: no-repeat; /* Do not repeat the image */
+		  background-size: cover; /* Resize the background image to cover the entire container */
+		filter:brightness(50%);
+		}
+	</style>
 <body>
+	
  <div class="login">
 	<h1>Prediction of House Rent</h1>
     <form action="{{ url_for('predict')}}"method="post">
